@@ -20,4 +20,4 @@ g++ -std=c++23 main.cpp -o trafficlight
 
 ## Doxygen
 
-Click this link to open the full documentation [Index](docs/html/index.html)
+Click this link to open the full documentation [Index](https://marco-lind-chasacademy.github.io/doxygen_test/index.html)
