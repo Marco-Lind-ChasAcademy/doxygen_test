@@ -80,8 +80,12 @@ int main()
 
     return 0;
 }
-
-// Sleep function that checks for interrupt every 100ms for fast keyboard response
+/**
+ * @brief Sleep function that checks for interrupt every 100ms for fast keyboard response
+ * 
+ * @param seconds 
+ */
+// 
 // Second is multiplied by 10 to get the number of 100ms intervals for ish seconds.
 void sleepWithInterrupt(int seconds)
 {

@@ -17,3 +17,7 @@ This project simulates a traffic light with a pedestrian crossing button. The tr
 ```sh
 g++ -std=c++23 main.cpp -o trafficlight
 ```
+
+## Doxygen
+
+Click this link to open the full documentation [Index](docs\html\index.html)
