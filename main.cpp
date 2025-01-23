@@ -79,13 +79,11 @@ int main()
 
     return 0;
 }
+
 /**
  * @brief Sleep function that checks for interrupt every 100ms for fast keyboard response
- * 
- * @param seconds 
+ * @param seconds seconds is multiplied by 10 to get the number of 100ms intervals for n seconds.
  */
-// 
-// Second is multiplied by 10 to get the number of 100ms intervals for ish seconds.
 void sleepWithInterrupt(int seconds)
 {
     for (int i = 0; i < seconds * 10; ++i)
@@ -153,7 +151,12 @@ void keyboardHandler()
 #endif
 }
 
-// Display the current state of the traffic light
+/**
+ * @brief Display the current state of the traffic light
+ * 
+ * @param state state of the traffic light
+ * @param pedState state of the pedestrian
+ */
 void displayLight(const State& state, const PedestrianState& pedState)
 {
     std::string strState;
@@ -196,6 +199,10 @@ void displayLight(const State& state, const PedestrianState& pedState)
               << (pedestrianCrossing ? " (Pedestrian crossing)" : "") << "\n";
 }
 
+/**
+ * @brief Thread for the traffic light
+ * 
+ */
 void trafficLight()
 {
     // Set initial state to green
@@ -258,6 +265,15 @@ void trafficLight()
     }
 }
 
+/**
+ * @brief Thread for the button
+ * 
+ * @param isRunning bool for state of the program
+ * @param buttonPress bool for the button
+ * @param mtx mutex lock
+ * @param cv condition variable
+ * @param pedestrianCrossing bool for pedestrian crossing the road
+ */
 void buttonSimulator(const std::atomic_bool* isRunning, std::atomic_bool* buttonPress,
                      std::mutex* mtx, std::condition_variable* cv,
                      std::atomic_bool* pedestrianCrossing)

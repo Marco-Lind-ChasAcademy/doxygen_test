@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sleepwithinterrupt_0',['sleepWithInterrupt',['../main_8cpp.html#a4c7505fab2be7017c2ee62ed512bcab9',1,'main.cpp']]]
+  ['displaylight_0',['displayLight',['../main_8cpp.html#a8bfbea798e2fedd1703777e4cbb5b459',1,'main.cpp']]]
 ];

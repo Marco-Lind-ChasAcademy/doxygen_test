@@ -109,6 +109,9 @@ $(function(){initNavTree('main_8cpp.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Traffic light simulation with pedestrian crossing button. The traffic light has three states: green, yellow, and red. The traffic light stays green until the pedestrian crossing button is pressed via keyboard or simulated button press. The pedestrian crossing button is pressed every 20-30 seconds to simulate crossing. When the button is pressed, the traffic light changes to red and the pedestrian can cross. The pedestrian crossing takes 20 seconds. The traffic light changes to green after the pedestrian has crossed. Button press can also be simulated by pressing any key. The program can be exited by pressing 'q'.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;atomic&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;condition_variable&gt;</code><br />
@@ -146,11 +149,12 @@ std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>
 <tr class="memitem:a19e8709d74987e5c327ec4eeb697a89a" id="r_a19e8709d74987e5c327ec4eeb697a89a"><td class="memItemLeft" align="right" valign="top"><a id="a19e8709d74987e5c327ec4eeb697a89a" name="a19e8709d74987e5c327ec4eeb697a89a"></a>
 std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>pedestrianCrossing</b> (false)</td></tr>
 <tr class="separator:a19e8709d74987e5c327ec4eeb697a89a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3403ec94cf8faa618cc36d34b947078" id="r_ae3403ec94cf8faa618cc36d34b947078"><td class="memItemLeft" align="right" valign="top"><a id="ae3403ec94cf8faa618cc36d34b947078" name="ae3403ec94cf8faa618cc36d34b947078"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>buttonSimulator</b> (const std::atomic_bool *isRunning, std::atomic_bool *buttonPress, std::mutex *mtx, std::condition_variable *cv, std::atomic_bool *pedestrianCrossing)</td></tr>
+<tr class="memitem:ae3403ec94cf8faa618cc36d34b947078" id="r_ae3403ec94cf8faa618cc36d34b947078"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3403ec94cf8faa618cc36d34b947078">buttonSimulator</a> (const std::atomic_bool *isRunning, std::atomic_bool *buttonPress, std::mutex *mtx, std::condition_variable *cv, std::atomic_bool *pedestrianCrossing)</td></tr>
+<tr class="memdesc:ae3403ec94cf8faa618cc36d34b947078"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread for the button.  <br /></td></tr>
 <tr class="separator:ae3403ec94cf8faa618cc36d34b947078"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a594bab21a8f3e429bd0c36f951c362f7" id="r_a594bab21a8f3e429bd0c36f951c362f7"><td class="memItemLeft" align="right" valign="top"><a id="a594bab21a8f3e429bd0c36f951c362f7" name="a594bab21a8f3e429bd0c36f951c362f7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>trafficLight</b> ()</td></tr>
+<tr class="memdesc:a594bab21a8f3e429bd0c36f951c362f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread for the traffic light. <br /></td></tr>
 <tr class="separator:a594bab21a8f3e429bd0c36f951c362f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a638d89ef3b126799ec1503c743a723" id="r_a0a638d89ef3b126799ec1503c743a723"><td class="memItemLeft" align="right" valign="top"><a id="a0a638d89ef3b126799ec1503c743a723" name="a0a638d89ef3b126799ec1503c743a723"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>keyboardHandler</b> ()</td></tr>
@@ -162,8 +166,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
 <tr class="memitem:a4c7505fab2be7017c2ee62ed512bcab9" id="r_a4c7505fab2be7017c2ee62ed512bcab9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c7505fab2be7017c2ee62ed512bcab9">sleepWithInterrupt</a> (int seconds)</td></tr>
 <tr class="memdesc:a4c7505fab2be7017c2ee62ed512bcab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sleep function that checks for interrupt every 100ms for fast keyboard response.  <br /></td></tr>
 <tr class="separator:a4c7505fab2be7017c2ee62ed512bcab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bfbea798e2fedd1703777e4cbb5b459" id="r_a8bfbea798e2fedd1703777e4cbb5b459"><td class="memItemLeft" align="right" valign="top"><a id="a8bfbea798e2fedd1703777e4cbb5b459" name="a8bfbea798e2fedd1703777e4cbb5b459"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>displayLight</b> (const State &amp;state, const PedestrianState &amp;pedState)</td></tr>
+<tr class="memitem:a8bfbea798e2fedd1703777e4cbb5b459" id="r_a8bfbea798e2fedd1703777e4cbb5b459"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bfbea798e2fedd1703777e4cbb5b459">displayLight</a> (const State &amp;state, const PedestrianState &amp;pedState)</td></tr>
+<tr class="memdesc:a8bfbea798e2fedd1703777e4cbb5b459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the current state of the traffic light.  <br /></td></tr>
 <tr class="separator:a8bfbea798e2fedd1703777e4cbb5b459"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -188,11 +192,90 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>BUTTON_TIME<
 <tr class="separator:a483aeb900e252bb41a0a736f97771d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>your name (<a href="#" onclick="location.href='mai'+'lto:'+'you'+'@d'+'oma'+'in'+'.co'+'m'; return false;">you@d<span class="obfuscator">.nosp@m.</span>omai<span class="obfuscator">.nosp@m.</span>n.com</a>) </dd></dl>
+<div class="textblock"><p>Traffic light simulation with pedestrian crossing button. The traffic light has three states: green, yellow, and red. The traffic light stays green until the pedestrian crossing button is pressed via keyboard or simulated button press. The pedestrian crossing button is pressed every 20-30 seconds to simulate crossing. When the button is pressed, the traffic light changes to red and the pedestrian can cross. The pedestrian crossing takes 20 seconds. The traffic light changes to green after the pedestrian has crossed. Button press can also be simulated by pressing any key. The program can be exited by pressing 'q'. </p>
+<dl class="section author"><dt>Author</dt><dd>your name (<a href="#" onclick="location.href='mai'+'lto:'+'you'+'@d'+'oma'+'in'+'.co'+'m'; return false;">you@d<span class="obfuscator">.nosp@m.</span>omai<span class="obfuscator">.nosp@m.</span>n.com</a>) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-01-23</dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 Traffic light simulation with pedestrian crossing button. The traffic light has three states: green, yellow, and red. The traffic light stays green until the pedestrian crossing button is pressed via keyboard or simulated button press. The pedestrian crossing button is pressed every 20-30 seconds to simulate crossing. When the button is pressed, the traffic light changes to red and the pedestrian can cross. The pedestrian crossing takes 20 seconds. The traffic light changes to green after the pedestrian has crossed. Button press can also be simulated by pressing any key. The program can be exited by pressing 'q'. </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="ae3403ec94cf8faa618cc36d34b947078" name="ae3403ec94cf8faa618cc36d34b947078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3403ec94cf8faa618cc36d34b947078">&#9670;&#160;</a></span>buttonSimulator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void buttonSimulator </td>
+          <td>(</td>
+          <td class="paramtype">const std::atomic_bool *</td>          <td class="paramname"><span class="paramname"><em>isRunning</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::atomic_bool *</td>          <td class="paramname"><span class="paramname"><em>buttonPress</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::mutex *</td>          <td class="paramname"><span class="paramname"><em>mtx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::condition_variable *</td>          <td class="paramname"><span class="paramname"><em>cv</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::atomic_bool *</td>          <td class="paramname"><span class="paramname"><em>pedestrianCrossing</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Thread for the button. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">isRunning</td><td>bool for state of the program </td></tr>
+    <tr><td class="paramname">buttonPress</td><td>bool for the button </td></tr>
+    <tr><td class="paramname">mtx</td><td>mutex lock </td></tr>
+    <tr><td class="paramname">cv</td><td>condition variable </td></tr>
+    <tr><td class="paramname">pedestrianCrossing</td><td>bool for pedestrian crossing the road </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8bfbea798e2fedd1703777e4cbb5b459" name="a8bfbea798e2fedd1703777e4cbb5b459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bfbea798e2fedd1703777e4cbb5b459">&#9670;&#160;</a></span>displayLight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void displayLight </td>
+          <td>(</td>
+          <td class="paramtype">const State &amp;</td>          <td class="paramname"><span class="paramname"><em>state</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const PedestrianState &amp;</td>          <td class="paramname"><span class="paramname"><em>pedState</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display the current state of the traffic light. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>state of the traffic light </td></tr>
+    <tr><td class="paramname">pedState</td><td>state of the pedestrian </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a4c7505fab2be7017c2ee62ed512bcab9" name="a4c7505fab2be7017c2ee62ed512bcab9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4c7505fab2be7017c2ee62ed512bcab9">&#9670;&#160;</a></span>sleepWithInterrupt()</h2>
 
@@ -211,7 +294,7 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>BUTTON_TIME<
 <p>Sleep function that checks for interrupt every 100ms for fast keyboard response. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">seconds</td><td></td></tr>
+    <tr><td class="paramname">seconds</td><td>seconds is multiplied by 10 to get the number of 100ms intervals for n seconds. </td></tr>
   </table>
   </dd>
 </dl>
