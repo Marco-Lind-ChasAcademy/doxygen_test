@@ -1,0 +1,95 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$condition\+\_\+variable$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$termios.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8}\label{main_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8} 
+enum class {\bfseries State} \{ {\bfseries GREEN}
+, {\bfseries YELLOW\+\_\+\+AFTER\+\_\+\+GREEN}
+, {\bfseries RED}
+, {\bfseries YELLOW\+\_\+\+AFTER\+\_\+\+RED}
+ \}
+\item 
+\Hypertarget{main_8cpp_a72d0440d346fb8ed8ad8e18127426bd2}\label{main_8cpp_a72d0440d346fb8ed8ad8e18127426bd2} 
+enum class {\bfseries Pedestrian\+State} \{ {\bfseries GREEN}
+, {\bfseries YELLOW\+\_\+\+AFTER\+\_\+\+GREEN}
+, {\bfseries RED}
+, {\bfseries YELLOW\+\_\+\+AFTER\+\_\+\+RED}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cpp_a4301a88c5480eb6b22afac4c904c87da}\label{main_8cpp_a4301a88c5480eb6b22afac4c904c87da} 
+std\+::atomic$<$ bool $>$ {\bfseries button\+Press} (false)
+\item 
+\Hypertarget{main_8cpp_a820ae402fc4ee3ba1594804e77a6cf0c}\label{main_8cpp_a820ae402fc4ee3ba1594804e77a6cf0c} 
+std\+::atomic$<$ bool $>$ {\bfseries is\+Running} (true)
+\item 
+\Hypertarget{main_8cpp_a19e8709d74987e5c327ec4eeb697a89a}\label{main_8cpp_a19e8709d74987e5c327ec4eeb697a89a} 
+std\+::atomic$<$ bool $>$ {\bfseries pedestrian\+Crossing} (false)
+\item 
+\Hypertarget{main_8cpp_ae3403ec94cf8faa618cc36d34b947078}\label{main_8cpp_ae3403ec94cf8faa618cc36d34b947078} 
+void {\bfseries button\+Simulator} (const std\+::atomic\+\_\+bool \texorpdfstring{$\ast$}{*}is\+Running, std\+::atomic\+\_\+bool \texorpdfstring{$\ast$}{*}button\+Press, std\+::mutex \texorpdfstring{$\ast$}{*}mtx, std\+::condition\+\_\+variable \texorpdfstring{$\ast$}{*}cv, std\+::atomic\+\_\+bool \texorpdfstring{$\ast$}{*}pedestrian\+Crossing)
+\item 
+\Hypertarget{main_8cpp_a594bab21a8f3e429bd0c36f951c362f7}\label{main_8cpp_a594bab21a8f3e429bd0c36f951c362f7} 
+void {\bfseries traffic\+Light} ()
+\item 
+\Hypertarget{main_8cpp_a0a638d89ef3b126799ec1503c743a723}\label{main_8cpp_a0a638d89ef3b126799ec1503c743a723} 
+void {\bfseries keyboard\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Keyboard handling for Windows and Mac/\+Linux, q for exit, any other key for button press. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int {\bfseries main} ()
+\item 
+\Hypertarget{main_8cpp_a4c7505fab2be7017c2ee62ed512bcab9}\label{main_8cpp_a4c7505fab2be7017c2ee62ed512bcab9} 
+void {\bfseries sleep\+With\+Interrupt} (int seconds)
+\item 
+\Hypertarget{main_8cpp_a8bfbea798e2fedd1703777e4cbb5b459}\label{main_8cpp_a8bfbea798e2fedd1703777e4cbb5b459} 
+void {\bfseries display\+Light} (const State \&state, const Pedestrian\+State \&ped\+State)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cpp_ad5e0dbd36f0d71fce9b00b7f991b2f38}\label{main_8cpp_ad5e0dbd36f0d71fce9b00b7f991b2f38} 
+std\+::mutex {\bfseries mtx}
+\item 
+\Hypertarget{main_8cpp_a0afa02d14fff34c480aabfbc41ad193c}\label{main_8cpp_a0afa02d14fff34c480aabfbc41ad193c} 
+std\+::condition\+\_\+variable {\bfseries cv}
+\item 
+\Hypertarget{main_8cpp_aae62c5ad0b9bb3307854cb72f85d182c}\label{main_8cpp_aae62c5ad0b9bb3307854cb72f85d182c} 
+constexpr int {\bfseries GREEN\+\_\+\+TIME} = 10
+\item 
+\Hypertarget{main_8cpp_a514c69912daade886a2adf92a4ab7938}\label{main_8cpp_a514c69912daade886a2adf92a4ab7938} 
+constexpr int {\bfseries YELLOW\+\_\+\+TIME} = 3
+\item 
+\Hypertarget{main_8cpp_a8e33de48c20cb415060954d70c1bc5d9}\label{main_8cpp_a8e33de48c20cb415060954d70c1bc5d9} 
+constexpr int {\bfseries RED\+\_\+\+TIME} = 10
+\item 
+\Hypertarget{main_8cpp_a483aeb900e252bb41a0a736f97771d3e}\label{main_8cpp_a483aeb900e252bb41a0a736f97771d3e} 
+constexpr int {\bfseries BUTTON\+\_\+\+TIME} = 20
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/01-\/23
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 Traffic light simulation with pedestrian crossing button. The traffic light has three states\+: green, yellow, and red. The traffic light stays green until the pedestrian crossing button is pressed via keyboard or simulated button press. The pedestrian crossing button is pressed every 20-\/30 seconds to simulate crossing. When the button is pressed, the traffic light changes to red and the pedestrian can cross. The pedestrian crossing takes 20 seconds. The traffic light changes to green after the pedestrian has crossed. Button press can also be simulated by pressing any key. The program can be exited by pressing \textquotesingle{}q\textquotesingle{}. 
+\end{DoxyCopyright}

@@ -1,13 +1,20 @@
-/*
-    Traffic light simulation with pedestrian crossing button.
-    The traffic light has three states: green, yellow, and red.
-    The traffic light stays green until the pedestrian crossing button is pressed via keyboard or
+/**
+ * @file main.cpp
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2025-01-23
+ * 
+ * @copyright Copyright (c) 2025
+ * Traffic light simulation with pedestrian crossing button.
+   The traffic light has three states: green, yellow, and red.
+   The traffic light stays green until the pedestrian crossing button is pressed via keyboard or
    simulated button press. The pedestrian crossing button is pressed every 20-30 seconds to simulate
    crossing. When the button is pressed, the traffic light changes to red and the pedestrian can
    cross. The pedestrian crossing takes 20 seconds. The traffic light changes to green after the
    pedestrian has crossed. Button press can also be simulated by pressing any key. The program can
    be exited by pressing 'q'.
-*/
+ */
 
 #include <atomic>
 #include <chrono>
@@ -88,7 +95,10 @@ void sleepWithInterrupt(int seconds)
     }
 }
 
-// Keyboard handling for Windows and Mac/Linux, q for exit, any other key for button press
+/**
+ * @brief Keyboard handling for Windows and Mac/Linux, q for exit, any other key for button press
+ * 
+ */
 void keyboardHandler()
 {
 #ifdef _WIN32
