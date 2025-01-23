@@ -29,7 +29,8 @@ var NAVTREE =
       [ "Dependencies", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
       [ "How to Run", "md__r_e_a_d_m_e.html#autotoc_md2", [
         [ "Example Compilation Command", "md__r_e_a_d_m_e.html#autotoc_md3", null ]
-      ] ]
+      ] ],
+      [ "Doxygen", "md__r_e_a_d_m_e.html#autotoc_md4", null ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],

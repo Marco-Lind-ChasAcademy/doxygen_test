@@ -51,9 +51,8 @@ void {\bfseries keyboard\+Handler} ()
 \Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
 int {\bfseries main} ()
 \item 
-\Hypertarget{main_8cpp_a4c7505fab2be7017c2ee62ed512bcab9}\label{main_8cpp_a4c7505fab2be7017c2ee62ed512bcab9} 
-void {\bfseries sleep\+With\+Interrupt} (int seconds)
-\item 
+void \mbox{\hyperlink{main_8cpp_a4c7505fab2be7017c2ee62ed512bcab9}{sleep\+With\+Interrupt}} (int seconds)
+\begin{DoxyCompactList}\small\item\em Sleep function that checks for interrupt every 100ms for fast keyboard response. \end{DoxyCompactList}\item 
 \Hypertarget{main_8cpp_a8bfbea798e2fedd1703777e4cbb5b459}\label{main_8cpp_a8bfbea798e2fedd1703777e4cbb5b459} 
 void {\bfseries display\+Light} (const State \&state, const Pedestrian\+State \&ped\+State)
 \end{DoxyCompactItemize}
@@ -93,3 +92,21 @@ your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}})
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2025 Traffic light simulation with pedestrian crossing button. The traffic light has three states\+: green, yellow, and red. The traffic light stays green until the pedestrian crossing button is pressed via keyboard or simulated button press. The pedestrian crossing button is pressed every 20-\/30 seconds to simulate crossing. When the button is pressed, the traffic light changes to red and the pedestrian can cross. The pedestrian crossing takes 20 seconds. The traffic light changes to green after the pedestrian has crossed. Button press can also be simulated by pressing any key. The program can be exited by pressing \textquotesingle{}q\textquotesingle{}. 
 \end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a4c7505fab2be7017c2ee62ed512bcab9}\index{main.cpp@{main.cpp}!sleepWithInterrupt@{sleepWithInterrupt}}
+\index{sleepWithInterrupt@{sleepWithInterrupt}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{sleepWithInterrupt()}{sleepWithInterrupt()}}
+{\footnotesize\ttfamily \label{main_8cpp_a4c7505fab2be7017c2ee62ed512bcab9} 
+void sleep\+With\+Interrupt (\begin{DoxyParamCaption}\item[{int}]{seconds}{}\end{DoxyParamCaption})}
+
+
+
+Sleep function that checks for interrupt every 100ms for fast keyboard response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seconds} & \\
+\hline
+\end{DoxyParams}
